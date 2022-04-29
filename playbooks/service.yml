@@ -1,8 +1,10 @@
 ---
-- name: check systemd services
+- name: check network manager services
   hosts: all
   become: yes
   tasks:
-  - name: checking Network Manager services
-    systemd: name= NetworkManager state=started enabled=yes
-
+  - name: Start netwrork service , if not running
+    service:
+      name: NetworkManager
+      state: started
+      enabled: yes
