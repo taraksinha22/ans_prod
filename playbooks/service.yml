@@ -1,0 +1,7 @@
+---
+- name: check systemd services
+  hosts: all
+  tasks:
+  - name: checking Network Manager services
+    service: name= NetworkManager state=started enabled=yes
+
